@@ -1,6 +1,7 @@
 CellularAutomaton::Application.routes.draw do
   resources :automatons
 
+  root to: 'automatons#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
