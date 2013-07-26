@@ -1,6 +1,4 @@
 <%= link_to("New Automaton", new_automaton_path) %>
 <ul>
-  <%- @automatons.each do |automaton| -%>
-    <li><%= link_to("Automaton: rule \##{automaton.rule}", automaton_path(automaton)) %></li>
-  <%- end -%>
+  <%= render @automatons %>
 </ul>
