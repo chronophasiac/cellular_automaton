@@ -1,8 +1,8 @@
 class Automaton < ActiveRecord::Base
-  attr_accessible :rule
+  attr_accessible :rule, :input_state
 
   def display
-    state = [1]
+    state = init_state 
     max = 64
     str = ''
 
@@ -18,6 +18,16 @@ class Automaton < ActiveRecord::Base
   end
 
   private
+
+  def init_state
+    result = []
+    s_arr = input_state.to_s.split('')
+    s_arr.each do |s|
+      result << s.to_i
+    end
+
+    result
+  end
 
   def evolve(rule, state)
     def state.[](x)

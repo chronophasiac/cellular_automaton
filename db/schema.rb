@@ -15,8 +15,9 @@ ActiveRecord::Schema.define(:version => 20130710004815) do
 
   create_table "automatons", :force => true do |t|
     t.integer  "rule"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "input_state"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
 end
